@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "allowJs": true,
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "paths": {
+      "@components": ["components/index"],
+      "@components/*": ["components/*"],
+      "@assets/*": ["assets/*"]
+    },
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["./src/**/*", "./typings.d.ts"],
+  "exclude": ["node_modules", "cypress"]
+}

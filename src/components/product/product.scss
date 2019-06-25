@@ -1,0 +1,26 @@
+// ========================================================================
+// COMPONENTS/PRODUCT
+// ========================================================================
+
+@import '~sassHelpers';
+
+.c-product {
+  display: block;
+  color: color(brown-dark);
+
+  &__img {
+    margin-bottom: spacer(2);
+  }
+
+  &__price {
+    color: color(yellow-dark);
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    .c-product__heading {
+      text-decoration: underline;
+    }
+  }
+}

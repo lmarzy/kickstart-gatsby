@@ -5,12 +5,19 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
+    "type-check": "tsc --noEmit",
+    "lint": "tslint --project .",
+    "dev": "gatsby develop",
     "build": "gatsby build",
-    "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "start": "npm run dev",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn type-check && lint-staged && yarn format && git add ."
+    }
   },
   "dependencies": {
     "gatsby": "^2.7.1",
@@ -18,7 +25,30 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "prettier": "^1.17.1"
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
+    "autoprefixer": "^9.5.1",
+    "gatsby-plugin-sass": "^2.0.11",
+    "gatsby-plugin-tslint": "^0.0.2",
+    "gatsby-plugin-typescript": "^2.0.15",
+    "gatsby-source-filesystem": "^2.0.37",
+    "gatsby-transformer-remark": "^2.3.12",
+    "node-sass": "^4.12.0",
+    "postcss-focus": "^4.0.0",
+    "postcss-pxtorem": "^4.0.1",
+    "postcss-vr": "^3.0.1",
+    "prettier": "^1.17.1",
+    "stylelint": "^10.1.0",
+    "stylelint-config-prettier": "^5.2.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended": "^2.2.0",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-loader": "^3.5.4",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.5.1"
   },
   "repository": {
     "type": "git",

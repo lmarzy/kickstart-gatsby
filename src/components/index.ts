@@ -1,0 +1,9 @@
+export { Header } from './header/header';
+export { Footer } from './footer/footer';
+export { MainLayout } from './layout/layout';
+export { Nav } from './nav/nav';
+export { Icon } from './icon/icon';
+export { Banners } from './banners/banners';
+export { Section } from './section/section';
+export { ProductList } from './product-list/product-list';
+export { Product } from './product/product';

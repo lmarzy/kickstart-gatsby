@@ -1,0 +1,19 @@
+// ========================================================================
+// ELEMENTS/LINKS
+// ========================================================================
+
+// Set default colour
+// Remove the gray background on active links in IE 10.
+// Set text decoration
+
+a {
+  color: color(green);
+  background-color: transparent;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
