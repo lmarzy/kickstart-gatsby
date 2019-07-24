@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import { Link } from '@reach/router';
 
 import { currency } from 'utilities/currency/currency';
 
@@ -17,11 +18,11 @@ export const Product: FunctionComponent<ProductProps> = ({ url, title, path, ima
 
   return (
     <article>
-      <a href={url} className="c-product">
+      <Link to={url} className="c-product">
         <img src={img} alt={title} className="c-product__img" />
         <h3 className="c-product__heading">{title}</h3>
         <p className="c-product__price">{currency(price)}</p>
-      </a>
+      </Link>
     </article>
   );
 };

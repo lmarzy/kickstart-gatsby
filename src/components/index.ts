@@ -7,3 +7,4 @@ export { Banners } from './banners/banners';
 export { Section } from './section/section';
 export { ProductList } from './product-list/product-list';
 export { Product } from './product/product';
+export { CategoryList } from './category-list/category-list';

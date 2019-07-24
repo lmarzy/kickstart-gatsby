@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby';
 import { MainLayout, Section } from '@components';
 
 import { ProductCategoryPageProps, ProductCategoriesModel } from './index.model';
+import { CategoryList } from '@components';
 
 const getUnique = (arr: ProductCategoriesModel[]) => {
   const unique = arr
@@ -23,12 +24,13 @@ export default ({ data }: ProductCategoryPageProps): JSX.Element => {
   const { edges } = data.allMarkdownRemark;
   const categories = getUnique(edges);
 
-  console.log(edges);
+  console.log(categories);
 
   return (
     <MainLayout>
       <Section heading="Products">
-        <ul>
+        <CategoryList categories={categories} />
+        {/* <ul>
           {categories.map((category: ProductCategoriesModel) => (
             <li key={category.node.frontmatter.category}>
               <Link
@@ -38,7 +40,7 @@ export default ({ data }: ProductCategoryPageProps): JSX.Element => {
               </Link>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </Section>
     </MainLayout>
   );
@@ -49,8 +51,11 @@ export const query = graphql`
     allMarkdownRemark {
       edges {
         node {
+          id
           frontmatter {
             category
+            path
+            image
           }
         }
       }

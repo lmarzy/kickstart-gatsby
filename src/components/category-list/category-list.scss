@@ -1,0 +1,11 @@
+// ========================================================================
+// COMPONENTS/PRODUCT-LIST
+// ========================================================================
+
+@import '~sassHelpers';
+
+.c-category-list {
+  display: grid;
+  grid-gap: spacer(4);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
