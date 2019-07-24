@@ -5,14 +5,14 @@ export const siteNavItems = [
   },
   {
     LinkName: 'Whiteboards',
-    LinkPath: '/whiteboards',
+    LinkPath: '/products/whiteboards',
   },
   {
     LinkName: 'Notepads',
-    LinkPath: '/notepads',
+    LinkPath: '/products/notepads',
   },
   {
     LinkName: 'Signs',
-    LinkPath: '/signs',
+    LinkPath: '/products/signs',
   },
 ];

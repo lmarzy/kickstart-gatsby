@@ -1,19 +1,20 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { ProductsModel, IndexPageProps } from './index.model';
+import { MainLayout, Section } from '@components';
 
-import { Banners, MainLayout, Section, ProductList } from '@components';
-
-export default ({ data }: IndexPageProps): JSX.Element => {
+export default ({ data }: any): JSX.Element => {
   const { edges } = data.allMarkdownRemark;
-  const latestProducts = edges.filter((item: ProductsModel) => item.node.frontmatter.latest);
+  const whiteboards = edges.filter((item: any) => item.node.frontmatter.category === 'whiteboards');
 
   return (
     <MainLayout>
-      <Banners />
-      <Section heading="Latest Products">
-        <ProductList products={latestProducts} />
+      <Section heading="Notepads">
+        <ul>
+          {whiteboards.map((whiteboard: any) => (
+            <li key={whiteboard.node.frontmatter.title}>{whiteboard.node.frontmatter.title}</li>
+          ))}
+        </ul>
       </Section>
     </MainLayout>
   );
@@ -27,6 +28,7 @@ export const query = graphql`
           id
           frontmatter {
             title
+            category
             latest
             path
             image

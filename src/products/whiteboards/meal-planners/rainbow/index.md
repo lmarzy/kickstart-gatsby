@@ -1,11 +1,11 @@
 ---
-title: 'Weekly Planner Whiteboard'
+title: 'Meal Planner Whiteboard'
 category: 'Whiteboards'
-subCategory: 'Weekly Planners'
+subCategory: 'Meal Planners'
 path: 'whiteboards/weekly-planners/rainbow'
 image: 'thumb'
 price: 10.95
 latest: true
 ---
 
-Weekly family planner whiteboard
+Weekly meal planner whiteboard
