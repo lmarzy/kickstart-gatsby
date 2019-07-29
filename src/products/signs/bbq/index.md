@@ -5,7 +5,9 @@ subCategory: 'bbq'
 path: 'signs/bbq'
 image: 'thumb'
 price: 10.95
-latest: false
+inStock: true
+latest: true
+shortDesc: 'Some information'
 ---
 
 Black BBQ Sign

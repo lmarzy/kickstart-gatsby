@@ -3,9 +3,11 @@ import { graphql } from 'gatsby';
 
 import { MainLayout, Section } from '@components';
 
-export default ({ data }: any): JSX.Element => {
+import { ProductModel, ProductsProps } from '../product.model';
+
+export default ({ data }: ProductsProps): JSX.Element => {
   const { edges } = data.allMarkdownRemark;
-  const whiteboards = edges.filter((item: any) => item.node.frontmatter.category === 'whiteboards');
+  const whiteboards = edges.filter((item: ProductModel) => item.node.frontmatter.category === 'whiteboards');
 
   return (
     <MainLayout>

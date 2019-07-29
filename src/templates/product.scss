@@ -1,0 +1,11 @@
+// ========================================================================
+// COMPONENTS/PRODUCT-LIST
+// ========================================================================
+
+@import '~sassHelpers';
+
+.l-product-details {
+  display: grid;
+  grid-gap: spacer(4);
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}

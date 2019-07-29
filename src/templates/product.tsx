@@ -1,20 +1,35 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
+
+import './product.scss';
+import { currency } from 'utilities/currency/currency';
 
 import { MainLayout } from '@components';
 
-interface ProductProps {
-  data: any;
-}
+import { ProductDetailsProps } from './products.model';
 
-export default ({ data }: ProductProps) => {
-  const post = data.markdownRemark;
+export default ({ data }: ProductDetailsProps) => {
+  const { frontmatter, html } = data.markdownRemark;
+
   return (
     <MainLayout>
-      <div>
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+      <article className="l-product-details u-mb-4">
+        <div className="l-product-details__gallery">
+          <img src="/" alt="" />
+        </div>
+        <div className="l-product-details__text">
+          <h2>{frontmatter.title}</h2>
+          <p>{currency(frontmatter.price)}</p>
+          <p>{frontmatter.inStock ? 'in-stock' : 'out of stock'}</p>
+          <p>{frontmatter.shortDesc}</p>
+        </div>
+        <div className="l-product-details__description">
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+        </div>
+        <div className="l-product-details__specs">
+          <p>Specs</p>
+        </div>
+      </article>
     </MainLayout>
   );
 };
@@ -25,6 +40,9 @@ export const query = graphql`
       html
       frontmatter {
         title
+        price
+        inStock
+        shortDesc
       }
     }
   }

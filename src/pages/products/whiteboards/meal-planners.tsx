@@ -1,22 +1,21 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { MainLayout, Section } from '@components';
+import { MainLayout, Section, ProductList } from '@components';
 
 import { ProductsProps, ProductModel } from '../product.model';
 
 export default ({ data }: ProductsProps): JSX.Element => {
   const { edges } = data.allMarkdownRemark;
-  const whiteboards = edges.filter((item: ProductModel) => item.node.frontmatter.category === 'whiteboards');
+  const whiteboards = edges.filter(
+    (item: ProductModel) =>
+      item.node.frontmatter.category === 'whiteboards' && item.node.frontmatter.subCategory === 'meal-planners',
+  );
 
   return (
     <MainLayout>
-      <Section heading="Signs">
-        <ul>
-          {whiteboards.map((whiteboard: any) => (
-            <li key={whiteboard.node.frontmatter.title}>{whiteboard.node.frontmatter.title}</li>
-          ))}
-        </ul>
+      <Section heading="Weekly Planner Whiteboards">
+        <ProductList products={whiteboards} />
       </Section>
     </MainLayout>
   );
@@ -31,6 +30,7 @@ export const query = graphql`
           frontmatter {
             title
             category
+            subCategory
             latest
             path
             image

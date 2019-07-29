@@ -1,18 +1,25 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import { MainLayout, Section } from '@components';
 
-export default ({ data }: any): JSX.Element => {
+import { unDashAndCap } from 'utilities/un-dash-and-cap/unDashandCap';
+import { ProductsProps, ProductModel } from '../product.model';
+
+export default ({ data }: ProductsProps): JSX.Element => {
   const { edges } = data.allMarkdownRemark;
-  const whiteboards = edges.filter((item: any) => item.node.frontmatter.category === 'Whiteboards');
+  const whiteboards = edges.filter((item: ProductModel) => item.node.frontmatter.category === 'whiteboards');
 
   return (
     <MainLayout>
       <Section heading="Whiteboards">
         <ul>
-          {whiteboards.map((whiteboard: any) => (
-            <li key={whiteboard.node.frontmatter.subCategory}>{whiteboard.node.frontmatter.subCategory}</li>
+          {whiteboards.map((whiteboard: ProductModel) => (
+            <li key={whiteboard.node.frontmatter.subCategory}>
+              <Link to={`/products/whiteboards/${whiteboard.node.frontmatter.subCategory}`}>
+                {unDashAndCap(whiteboard.node.frontmatter.subCategory)}
+              </Link>
+            </li>
           ))}
         </ul>
       </Section>
