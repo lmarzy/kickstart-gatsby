@@ -7,13 +7,13 @@ import { ProductsProps, ProductModel } from '../product.model';
 
 export default ({ data }: ProductsProps): JSX.Element => {
   const { edges } = data.allMarkdownRemark;
-  const whiteboards = edges.filter((item: ProductModel) => item.node.frontmatter.category === 'whiteboards');
+  const signs = edges.filter((item: ProductModel) => item.node.frontmatter.category === 'signs');
 
   return (
     <MainLayout>
       <Section heading="Signs">
         <ul>
-          {whiteboards.map((whiteboard: any) => (
+          {signs.map((whiteboard: any) => (
             <li key={whiteboard.node.frontmatter.title}>{whiteboard.node.frontmatter.title}</li>
           ))}
         </ul>
@@ -33,7 +33,7 @@ export const query = graphql`
             category
             latest
             path
-            image
+            images
             price
           }
           fields {

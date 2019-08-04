@@ -39,7 +39,7 @@ export const query = graphql`
             subCategory
             latest
             path
-            image
+            images
             price
           }
           fields {

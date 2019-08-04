@@ -5,7 +5,7 @@ export interface ProductsModel {
       title: string;
       latest: boolean;
       path: string;
-      image: string;
+      images: string[];
       price: number;
     };
     fields: {

@@ -9,7 +9,9 @@ export const CategoryList: FunctionComponent = ({ categories }) => {
   return (
     <ul className="c-category-list">
       {categories.map((category: any) => {
-        const img = require(`../../products/${category.node.frontmatter.path}/${category.node.frontmatter.image}.jpg`);
+        const img = require(`../../products/${category.node.frontmatter.path}/images/${
+          category.node.frontmatter.image
+        }.jpg`);
         return (
           <li key={category.node.id} className="c-category-list__list-item">
             <Link to={`/products/${category.node.frontmatter.category}`}>

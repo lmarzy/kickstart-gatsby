@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import './product.scss';
 import { currency } from 'utilities/currency/currency';
 
-import { MainLayout } from '@components';
+import { MainLayout, ImageGallery, ProductOverview } from '@components';
 
 import { ProductDetailsProps } from './products.model';
 
@@ -15,13 +15,15 @@ export default ({ data }: ProductDetailsProps) => {
     <MainLayout>
       <article className="l-product-details u-mb-4">
         <div className="l-product-details__gallery">
-          <img src="/" alt="" />
+          <ImageGallery images={frontmatter.images} path={frontmatter.path} />
         </div>
         <div className="l-product-details__text">
-          <h2>{frontmatter.title}</h2>
-          <p>{currency(frontmatter.price)}</p>
-          <p>{frontmatter.inStock ? 'in-stock' : 'out of stock'}</p>
-          <p>{frontmatter.shortDesc}</p>
+          <ProductOverview
+            title={frontmatter.title}
+            price={frontmatter.price}
+            inStock={frontmatter.inStock}
+            shortDesc={frontmatter.shortDesc}
+          />
         </div>
         <div className="l-product-details__description">
           <div dangerouslySetInnerHTML={{ __html: html }} />
@@ -40,7 +42,9 @@ export const query = graphql`
       html
       frontmatter {
         title
+        path
         price
+        images
         inStock
         shortDesc
       }

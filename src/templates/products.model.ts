@@ -3,6 +3,9 @@ export interface ProductDetailsProps {
     markdownRemark: {
       frontmatter: {
         title: string;
+        path: string;
+        image: string;
+        images: string[];
         price: number;
         inStock: boolean;
         shortDesc: string;

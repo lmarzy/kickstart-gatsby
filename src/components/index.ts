@@ -8,3 +8,6 @@ export { Section } from './section/section';
 export { ProductList } from './product-list/product-list';
 export { Product } from './product/product';
 export { CategoryList } from './category-list/category-list';
+export { ImageGallery } from './image-gallery/image-gallery';
+export { ProductOverview } from './product-overview/product-overview';
+export { Button } from './button/button';

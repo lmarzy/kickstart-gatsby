@@ -7,7 +7,7 @@ export interface ProductModel {
       subCategory: string;
       latest: boolean;
       path: string;
-      image: string;
+      images: string[];
       price: number;
     };
     fields: {

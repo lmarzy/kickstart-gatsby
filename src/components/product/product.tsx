@@ -14,7 +14,7 @@ interface ProductProps {
 }
 
 export const Product: FunctionComponent<ProductProps> = ({ url, title, path, image, price }) => {
-  const img = require(`../../products/${path}/${image}.jpg`);
+  const img = require(`../../products/${path}/images/${image}.jpg`);
 
   return (
     <article>

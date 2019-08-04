@@ -29,7 +29,7 @@ export const query = graphql`
             title
             latest
             path
-            image
+            images
             price
           }
           fields {
