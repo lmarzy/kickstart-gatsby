@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import './product.scss';
 import { currency } from 'utilities/currency/currency';
 
-import { MainLayout, ImageGallery, ProductOverview } from '@components';
+import { MainLayout, ImageGallery, ProductOverview, ProductDetails, ProductSpecs } from '@components';
 
 import { ProductDetailsProps } from './products.model';
 
@@ -26,10 +26,10 @@ export default ({ data }: ProductDetailsProps) => {
           />
         </div>
         <div className="l-product-details__description">
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <ProductDetails html={html} />
         </div>
         <div className="l-product-details__specs">
-          <p>Specs</p>
+          <ProductSpecs specs={frontmatter.specs} />
         </div>
       </article>
     </MainLayout>
@@ -47,6 +47,11 @@ export const query = graphql`
         images
         inStock
         shortDesc
+        specs {
+          width
+          height
+          weight
+        }
       }
     }
   }

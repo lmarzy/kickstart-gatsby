@@ -11,3 +11,5 @@ export { CategoryList } from './category-list/category-list';
 export { ImageGallery } from './image-gallery/image-gallery';
 export { ProductOverview } from './product-overview/product-overview';
 export { Button } from './button/button';
+export { ProductDetails } from './product-details/product-details';
+export { ProductSpecs } from './product-specs/product-specs';

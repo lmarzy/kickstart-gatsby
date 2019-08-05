@@ -1,3 +1,9 @@
+export interface SpecsInterface {
+  width?: string;
+  height?: string;
+  weight?: string;
+}
+
 export interface ProductDetailsProps {
   data: {
     markdownRemark: {
@@ -9,6 +15,7 @@ export interface ProductDetailsProps {
         price: number;
         inStock: boolean;
         shortDesc: string;
+        specs: SpecsInterface;
       };
       html: string;
     };

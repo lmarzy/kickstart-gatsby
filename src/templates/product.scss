@@ -7,7 +7,10 @@
 .l-product-details {
   display: grid;
   grid-gap: spacer(4);
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
+  @include bp(10) {
+    grid-template-columns: 3fr 2fr;
+  }
 
   @include bp(20) {
     grid-template-columns: 4fr 2fr;
