@@ -62,6 +62,7 @@ export const query = graphql`
         snipcart {
           title
           name
+          personalisation
           columns
           addons
         }

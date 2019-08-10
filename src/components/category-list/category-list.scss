@@ -8,4 +8,21 @@
   display: grid;
   grid-gap: spacer(4);
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  &__link {
+    display: block;
+    position: relative;
+  }
+
+  &__category {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: rgba(color(brown-dark), 0.5);
+  }
 }

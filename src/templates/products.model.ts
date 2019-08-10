@@ -7,8 +7,9 @@ export interface SpecsInterface {
 
 export interface SnipCartInterface {
   title?: boolean;
-  name?: false;
-  columns?: false;
+  name?: boolean;
+  personalisation?: boolean;
+  columns?: boolean;
   addons?: boolean;
 }
 

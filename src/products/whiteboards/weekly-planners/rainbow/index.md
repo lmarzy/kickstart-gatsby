@@ -18,6 +18,8 @@ specs: {
 snipcart: {
   title: true,
   columns: true,
+  name: false,
+  personalisation: false,
   addons: true
 }
 ---

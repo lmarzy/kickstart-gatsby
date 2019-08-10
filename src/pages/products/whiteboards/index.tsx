@@ -1,7 +1,7 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import { MainLayout, Section } from '@components';
+import { MainLayout, Section, CategoryList } from '@components';
 
 import { unDashAndCap } from 'utilities/un-dash-and-cap/unDashandCap';
 import { ProductsProps, ProductModel } from '../product.model';
@@ -13,15 +13,7 @@ export default ({ data }: ProductsProps): JSX.Element => {
   return (
     <MainLayout pageTitle="Whiteboards">
       <Section heading="Whiteboards">
-        <ul>
-          {whiteboards.map((whiteboard: ProductModel) => (
-            <li key={whiteboard.node.frontmatter.subCategory}>
-              <Link to={`/products/whiteboards/${whiteboard.node.frontmatter.subCategory}`}>
-                {unDashAndCap(whiteboard.node.frontmatter.subCategory)}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <CategoryList categories={whiteboards} />
       </Section>
     </MainLayout>
   );

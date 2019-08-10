@@ -17,6 +17,9 @@ specs: {
 }
 snipcart: {
   title: true,
+  columns: false,
+  name: false,
+  personalisation: false,
   addons: true
 }
 ---

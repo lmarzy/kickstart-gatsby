@@ -1,9 +1,8 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import { MainLayout, Section } from '@components';
+import { MainLayout, Section, CategoryList } from '@components';
 
-import { unDashAndCap } from 'utilities/un-dash-and-cap/unDashandCap';
 import { ProductsProps, ProductModel } from '../product.model';
 
 export default ({ data }: ProductsProps): JSX.Element => {
@@ -13,15 +12,7 @@ export default ({ data }: ProductsProps): JSX.Element => {
   return (
     <MainLayout pageTitle="Notepads">
       <Section heading="Notepads">
-        <ul>
-          {notepads.map((notepad: ProductModel) => (
-            <li key={notepad.node.frontmatter.subCategory}>
-              <Link to={`/products/notepads/${notepad.node.frontmatter.subCategory}`}>
-                {unDashAndCap(notepad.node.frontmatter.subCategory)}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <CategoryList categories={notepads} />
       </Section>
     </MainLayout>
   );

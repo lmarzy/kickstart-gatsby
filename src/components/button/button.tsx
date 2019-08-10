@@ -57,8 +57,13 @@ export const Button: FunctionComponent<ButtonProps> = ({
   }
 
   if (snipcart.name) {
-    buttonAttributes['data-item-custom3-name'] = 'name';
+    buttonAttributes['data-item-custom3-name'] = 'Name';
     buttonAttributes['data-item-custom3-required'] = 'true';
+  }
+
+  if (snipcart.personalisation) {
+    buttonAttributes['data-item-custom4-name'] = 'Personalisation';
+    buttonAttributes['data-item-custom4-required'] = 'true';
   }
 
   if (snipcart.addons) {
