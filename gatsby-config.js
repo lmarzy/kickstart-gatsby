@@ -28,8 +28,9 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-typescript`,
-    `gatsby-plugin-tslint`,
+    'gatsby-transformer-remark',
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-tslint',
+    'gatsby-plugin-react-helmet',
   ],
 };

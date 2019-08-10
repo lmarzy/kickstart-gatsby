@@ -13,7 +13,7 @@ export default ({ data }: ProductsProps): JSX.Element => {
   );
 
   return (
-    <MainLayout>
+    <MainLayout pageTitle="Meal Planner Whiteboards">
       <Section heading="Weekly Planner Whiteboards">
         <ProductList products={whiteboards} />
       </Section>

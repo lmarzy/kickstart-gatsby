@@ -1,9 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from '@reach/router';
 
-import { currency } from 'utilities/currency/currency';
-
 import './product.scss';
+import { Price } from '@components';
 
 interface ProductProps {
   url: string;
@@ -21,7 +20,7 @@ export const Product: FunctionComponent<ProductProps> = ({ url, title, path, ima
       <Link to={url} className="c-product">
         <img src={img} alt={title} className="c-product__img" />
         <h3 className="c-product__heading">{title}</h3>
-        <p className="c-product__price">{currency(price)}</p>
+        <Price price={price} />
       </Link>
     </article>
   );

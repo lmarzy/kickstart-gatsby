@@ -9,12 +9,12 @@ export default ({ data }: ProductsProps): JSX.Element => {
   const { edges } = data.allMarkdownRemark;
   const whiteboards = edges.filter(
     (item: ProductModel) =>
-      item.node.frontmatter.category === 'whiteboards' && item.node.frontmatter.subCategory === 'weekly-planners',
+      item.node.frontmatter.category === 'notepads' && item.node.frontmatter.subCategory === 'weekly-planners',
   );
 
   return (
-    <MainLayout pageTitle="Weekly Planner Whiteboards">
-      <Section heading="Weekly Planner Whiteboards">
+    <MainLayout pageTitle="Weekly Planner Notepads">
+      <Section heading="Weekly Planner Notepads">
         <ProductList products={whiteboards} />
       </Section>
     </MainLayout>

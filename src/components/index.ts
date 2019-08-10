@@ -13,3 +13,4 @@ export { ProductOverview } from './product-overview/product-overview';
 export { Button } from './button/button';
 export { ProductDetails } from './product-details/product-details';
 export { ProductSpecs } from './product-specs/product-specs';
+export { Price } from './price/price';

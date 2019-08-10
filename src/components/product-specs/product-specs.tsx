@@ -9,6 +9,12 @@ interface ProductSpecsProps {
 
 export const ProductSpecs: FunctionComponent<ProductSpecsProps> = ({ specs }) => (
   <dl className="c-product-specs">
+    {specs.material && (
+      <>
+        <dt>Material:</dt>
+        <dd>{specs.material}</dd>
+      </>
+    )}
     {specs.width && (
       <>
         <dt>Width:</dt>

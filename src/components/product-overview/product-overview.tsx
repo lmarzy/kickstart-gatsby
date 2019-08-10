@@ -1,24 +1,64 @@
 import React, { FunctionComponent } from 'react';
-import { currency } from 'utilities/currency/currency';
+import { Button, Price, Icon } from '@components';
+
+import { SnipCartInterface } from 'templates/products.model';
 
 import './product-overview.scss';
-import { Button } from '@components/button/button';
 
 interface ProductOverviewProps {
+  id: number;
   title: string;
+  category: string;
   price: number;
+  image: string;
+  path: string;
   inStock: boolean;
   shortDesc: string;
+  snipcart: SnipCartInterface;
 }
 
-export const ProductOverview: FunctionComponent<ProductOverviewProps> = ({ title, price, inStock, shortDesc }) => (
+const showStock = (inStock: boolean) => {
+  return inStock ? (
+    <span>
+      <Icon name="tick" />
+      In stock
+    </span>
+  ) : (
+    <span>
+      <Icon name="close" />
+      Out of stock
+    </span>
+  );
+};
+
+export const ProductOverview: FunctionComponent<ProductOverviewProps> = ({
+  id,
+  title,
+  category,
+  price,
+  image,
+  path,
+  inStock,
+  shortDesc,
+  snipcart,
+}) => (
   <div className="c-product-overview">
     <h2 className="c-product-overview__title">{title}</h2>
-    <p className="c-product-overview__price">{currency(price)}</p>
-    <p className="c-product-overview__in-stock">{inStock ? 'in-stock' : 'out of stock'}</p>
+    <Price price={price} size="l" />
+    <p className="c-product-overview__in-stock">{showStock(inStock)}</p>
     <p className="c-product-overview__short-desc">{shortDesc}</p>
 
-    <Button type="primary" width="full">
+    <Button
+      type="primary"
+      width="full"
+      id={id}
+      title={title}
+      category={category}
+      price={price}
+      path={path}
+      shortDesc={shortDesc}
+      image={image}
+      snipcart={snipcart}>
       Add to basket
     </Button>
   </div>

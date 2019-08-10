@@ -1,20 +1,25 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import { MainLayout, Section } from '@components';
 
-import { ProductModel, ProductsProps } from '../product.model';
+import { unDashAndCap } from 'utilities/un-dash-and-cap/unDashandCap';
+import { ProductsProps, ProductModel } from '../product.model';
 
 export default ({ data }: ProductsProps): JSX.Element => {
   const { edges } = data.allMarkdownRemark;
   const notepads = edges.filter((item: ProductModel) => item.node.frontmatter.category === 'notepads');
 
   return (
-    <MainLayout>
+    <MainLayout pageTitle="Notepads">
       <Section heading="Notepads">
         <ul>
-          {notepads.map((whiteboard: any) => (
-            <li key={whiteboard.node.frontmatter.title}>{whiteboard.node.frontmatter.title}</li>
+          {notepads.map((notepad: ProductModel) => (
+            <li key={notepad.node.frontmatter.subCategory}>
+              <Link to={`/products/notepads/${notepad.node.frontmatter.subCategory}`}>
+                {unDashAndCap(notepad.node.frontmatter.subCategory)}
+              </Link>
+            </li>
           ))}
         </ul>
       </Section>
@@ -31,6 +36,7 @@ export const query = graphql`
           frontmatter {
             title
             category
+            subCategory
             latest
             path
             images

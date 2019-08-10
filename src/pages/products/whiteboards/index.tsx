@@ -11,7 +11,7 @@ export default ({ data }: ProductsProps): JSX.Element => {
   const whiteboards = edges.filter((item: ProductModel) => item.node.frontmatter.category === 'whiteboards');
 
   return (
-    <MainLayout>
+    <MainLayout pageTitle="Whiteboards">
       <Section heading="Whiteboards">
         <ul>
           {whiteboards.map((whiteboard: ProductModel) => (

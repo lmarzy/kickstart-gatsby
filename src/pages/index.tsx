@@ -10,7 +10,7 @@ export default ({ data }: IndexPageProps): JSX.Element => {
   const latestProducts = edges.filter((item: ProductsModel) => item.node.frontmatter.latest);
 
   return (
-    <MainLayout>
+    <MainLayout pageTitle="Home">
       <Banners />
       <Section heading="Latest Products">
         <ProductList products={latestProducts} />
