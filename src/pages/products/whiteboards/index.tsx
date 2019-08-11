@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 
 import { MainLayout, Section, CategoryList } from '@components';
 
-import { unDashAndCap } from 'utilities/un-dash-and-cap/unDashandCap';
 import { ProductsProps, ProductModel } from '../product.model';
 
 export default ({ data }: ProductsProps): JSX.Element => {
@@ -29,9 +28,13 @@ export const query = graphql`
             title
             category
             subCategory
-            latest
-            path
-            images
+            mainImage {
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             price
           }
           fields {

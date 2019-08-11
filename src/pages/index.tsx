@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 import { ProductsModel, IndexPageProps } from './index.model';
 
-import { Banners, MainLayout, Section, ProductList } from '@components';
+import { Banner, MainLayout, Section, ProductList } from '@components';
 
 export default ({ data }: IndexPageProps): JSX.Element => {
   const { edges } = data.allMarkdownRemark;
@@ -11,7 +11,7 @@ export default ({ data }: IndexPageProps): JSX.Element => {
 
   return (
     <MainLayout pageTitle="Home">
-      <Banners />
+      <Banner />
       <Section heading="Latest Products">
         <ProductList products={latestProducts} />
       </Section>
@@ -28,8 +28,13 @@ export const query = graphql`
           frontmatter {
             title
             latest
-            path
-            images
+            mainImage {
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             price
           }
           fields {

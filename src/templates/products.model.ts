@@ -21,7 +21,6 @@ export interface ProductDetailsProps {
         title: string;
         category: string;
         path: string;
-        image: string;
         images: string[];
         price: number;
         inStock: boolean;

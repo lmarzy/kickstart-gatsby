@@ -1,3 +1,5 @@
+import { ImageSharp } from 'pages/index.model';
+
 export interface ProductModel {
   node: {
     id: string;
@@ -5,9 +7,7 @@ export interface ProductModel {
       title: string;
       category: string;
       subCategory: string;
-      latest: boolean;
-      path: string;
-      images: string[];
+      mainImage: ImageSharp;
       price: number;
     };
     fields: {

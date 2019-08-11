@@ -9,6 +9,7 @@
   opacity: 0;
   background-color: white;
   transition: all 400ms ease-in;
+  z-index: 10;
 
   &__close {
     display: none;

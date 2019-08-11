@@ -1,11 +1,16 @@
+export interface ImageSharp {
+  childImageSharp: {
+    fluid: any;
+  };
+}
+
 export interface ProductsModel {
   node: {
     id: string;
     frontmatter: {
       title: string;
       latest: boolean;
-      path: string;
-      images: string[];
+      mainImage: ImageSharp;
       price: number;
     };
     fields: {

@@ -5,31 +5,10 @@
 @import '~sassHelpers';
 
 .c-banners {
-  display: flex;
-  flex-direction: column;
   margin-bottom: spacer(4);
 
   &__img {
     width: 100%;
     height: 100%;
-  }
-
-  @include bp(10) {
-    &__bcwrap {
-      display: flex;
-    }
-
-    &__b,
-    &__c {
-      flex: 1;
-    }
-  }
-
-  @include bp(20) {
-    flex-direction: row;
-
-    &__bcwrap {
-      flex-direction: column;
-    }
   }
 }

@@ -28,9 +28,13 @@ export const query = graphql`
             title
             category
             subCategory
-            latest
-            path
-            images
+            mainImage {
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             price
           }
           fields {

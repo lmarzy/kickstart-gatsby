@@ -4,6 +4,7 @@ title: 'Weekly Planner Notepad'
 category: 'notepads'
 subCategory: 'weekly-planners'
 path: 'notepads/weekly-planners/schedule-todo-notes'
+mainImage: './images/1.jpg'
 images: ['1', '2', '3', '4', '5', '6', '7']
 price: 7.75
 inStock: true
