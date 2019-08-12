@@ -61,5 +61,7 @@ export const ProductOverview: FunctionComponent<ProductOverviewProps> = ({
       snipcart={snipcart}>
       Add to basket
     </Button>
+
+    <p className="c-product-overview__personalisation">* Personalisaiton details can be added during checkout</p>
   </div>
 );

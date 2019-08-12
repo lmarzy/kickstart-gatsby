@@ -25,4 +25,8 @@
   &__menu {
     margin-left: auto;
   }
+
+  @include bp(10) {
+    margin-bottom: spacer(5);
+  }
 }

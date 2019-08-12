@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 import { MainLayout, Section, ProductList } from '@components';
 
-import { ProductsProps, ProductModel } from '../product.model';
+import { ProductsProps, ProductModel } from '../../../models/product.model';
 
 export default ({ data }: ProductsProps): JSX.Element => {
   const { edges } = data.allMarkdownRemark;

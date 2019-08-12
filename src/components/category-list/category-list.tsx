@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import Img from 'gatsby-image';
 import { Link } from '@reach/router';
 
-import { ProductModel } from '../../pages/products/product.model';
+import { ProductModel } from '../../models/product.model';
 
 import './category-list.scss';
 import { unDashAndCap } from 'utilities/un-dash-and-cap/unDashandCap';

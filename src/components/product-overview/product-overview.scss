@@ -32,4 +32,12 @@
       }
     }
   }
+
+  button {
+    margin-bottom: spacer(1);
+  }
+
+  &__personalisation {
+    font-size: font-size(1);
+  }
 }

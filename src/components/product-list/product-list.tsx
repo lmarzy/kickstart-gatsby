@@ -1,17 +1,17 @@
 import React, { FunctionComponent } from 'react';
 
-import { ProductsModel } from 'pages/index.model';
+import { ProductModel } from 'models/products.model';
 
 import { Product } from '@components';
 import './product-list.scss';
 
 interface ProductListProps {
-  products: ProductsModel[];
+  products: ProductModel[];
 }
 
 export const ProductList: FunctionComponent<ProductListProps> = ({ products }) => (
   <ul className="c-product-list">
-    {products.map((product: ProductsModel) => (
+    {products.map((product: ProductModel) => (
       <li key={product.node.id} className="c-product-list__list-item">
         <Product
           url={product.node.fields.slug}

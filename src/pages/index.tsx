@@ -1,13 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { ProductsModel, IndexPageProps } from './index.model';
+import { ProductsModel, ProductModel } from '../models/products.model';
 
 import { Banner, MainLayout, Section, ProductList } from '@components';
 
-export default ({ data }: IndexPageProps): JSX.Element => {
+export default ({ data }: ProductsModel): JSX.Element => {
   const { edges } = data.allMarkdownRemark;
-  const latestProducts = edges.filter((item: ProductsModel) => item.node.frontmatter.latest);
+  const latestProducts = edges.filter((item: ProductModel) => item.node.frontmatter.latest);
 
   return (
     <MainLayout pageTitle="Home">
