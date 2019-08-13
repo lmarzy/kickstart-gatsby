@@ -7,15 +7,14 @@ import { ProductsModel, ProductModel } from '@models/product-list.model';
 
 export default ({ data }: ProductsModel): JSX.Element => {
   const { edges } = data.allMarkdownRemark;
-  const whiteboards = edges.filter(
-    (item: ProductModel) =>
-      item.node.frontmatter.category === 'whiteboards' && item.node.frontmatter.subCategory === 'meal-planners',
-  );
+  const items = edges.filter((item: ProductModel) => item.node.frontmatter.category === 'items');
+
+  console.log(items);
 
   return (
-    <MainLayout pageTitle="Meal Planner Whiteboards">
-      <Section heading="Weekly Planner Whiteboards">
-        <ProductList products={whiteboards} />
+    <MainLayout pageTitle="Items">
+      <Section heading="Items">
+        <ProductList products={items} />
       </Section>
     </MainLayout>
   );

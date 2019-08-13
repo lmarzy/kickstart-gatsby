@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { Button, Price, Icon } from '@components';
 
-import { SnipCartInterface } from 'templates/products.model';
+import { SnipCartModel } from '@models/product.model';
 
 import './product-overview.scss';
 
@@ -14,7 +14,7 @@ interface ProductOverviewProps {
   path: string;
   inStock: boolean;
   shortDesc: string;
-  snipcart: SnipCartInterface;
+  snipcart: SnipCartModel;
 }
 
 const showStock = (inStock: boolean) => {

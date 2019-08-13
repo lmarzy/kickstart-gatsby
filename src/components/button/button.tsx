@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
-import { SnipCartInterface } from 'templates/products.model';
+import { SnipCartModel } from '@models/product.model';
 
 import './buton.scss';
 
@@ -14,7 +14,7 @@ interface ButtonProps {
   category: string;
   shortDesc: string;
   path: string;
-  snipcart: SnipCartInterface;
+  snipcart: SnipCartModel;
 }
 
 export const Button: FunctionComponent<ButtonProps> = ({

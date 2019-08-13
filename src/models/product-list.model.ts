@@ -9,6 +9,8 @@ export interface ProductModel {
     id: string;
     frontmatter: {
       title: string;
+      category: string;
+      subCategory: string;
       latest: boolean;
       mainImage: ImageSharp;
       price: number;
@@ -16,6 +18,7 @@ export interface ProductModel {
     fields: {
       slug: string;
     };
+    excerpt: string;
   };
 }
 

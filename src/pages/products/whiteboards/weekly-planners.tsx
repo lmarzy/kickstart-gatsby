@@ -3,9 +3,9 @@ import { graphql } from 'gatsby';
 
 import { MainLayout, Section, ProductList } from '@components';
 
-import { ProductsProps, ProductModel } from '../../../models/product.model';
+import { ProductsModel, ProductModel } from '@models/product-list.model';
 
-export default ({ data }: ProductsProps): JSX.Element => {
+export default ({ data }: ProductsModel): JSX.Element => {
   const { edges } = data.allMarkdownRemark;
   const whiteboards = edges.filter(
     (item: ProductModel) =>

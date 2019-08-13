@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from 'react';
-import { SpecsInterface } from 'templates/products.model';
+import { SpecsModel } from '@models/product.model';
 
 import './product-specs.scss';
 
 interface ProductSpecsProps {
-  specs: SpecsInterface;
+  specs: SpecsModel;
 }
 
 export const ProductSpecs: FunctionComponent<ProductSpecsProps> = ({ specs }) => (

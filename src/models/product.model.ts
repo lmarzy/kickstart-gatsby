@@ -1,26 +1,34 @@
-import { ImageSharp } from 'models/index.model';
-
-export interface ProductModel {
-  node: {
-    id: string;
-    frontmatter: {
-      title: string;
-      category: string;
-      subCategory: string;
-      mainImage: ImageSharp;
-      price: number;
-    };
-    fields: {
-      slug: string;
-    };
-    excerpt: string;
-  };
+export interface SpecsModel {
+  material?: string;
+  width?: string;
+  height?: string;
+  weight?: string;
 }
 
-export interface ProductsProps {
+export interface SnipCartModel {
+  title?: boolean;
+  name?: boolean;
+  personalisation?: boolean;
+  columns?: boolean;
+  addons?: boolean;
+}
+
+export interface ProductDetailsModel {
   data: {
-    allMarkdownRemark: {
-      edges: ProductModel[];
+    markdownRemark: {
+      frontmatter: {
+        id: number;
+        title: string;
+        category: string;
+        path: string;
+        images: string[];
+        price: number;
+        inStock: boolean;
+        shortDesc: string;
+        specs: SpecsModel;
+        snipcart: SnipCartModel;
+      };
+      html: string;
     };
   };
 }

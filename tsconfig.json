@@ -18,7 +18,8 @@
     "paths": {
       "@components": ["components/index"],
       "@components/*": ["components/*"],
-      "@assets/*": ["assets/*"]
+      "@assets/*": ["assets/*"],
+      "@models/*": ["models/*"]
     },
     "forceConsistentCasingInFileNames": true
   },

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { ProductsModel, ProductModel } from '../models/products.model';
+import { ProductsModel, ProductModel } from '@models/product-list.model';
 
 import { Banner, MainLayout, Section, ProductList } from '@components';
 
@@ -28,6 +28,7 @@ export const query = graphql`
           frontmatter {
             title
             latest
+            category
             mainImage {
               childImageSharp {
                 fluid(maxWidth: 600) {

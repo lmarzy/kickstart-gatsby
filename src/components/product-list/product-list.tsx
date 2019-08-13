@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
-import { ProductModel } from 'models/products.model';
+import { ProductModel } from '@models/product-list.model';
 
 import { Product } from '@components';
 import './product-list.scss';

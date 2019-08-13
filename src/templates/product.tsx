@@ -5,9 +5,9 @@ import './product.scss';
 
 import { MainLayout, ImageGallery, ProductOverview, ProductDetails, ProductSpecs } from '@components';
 
-import { ProductDetailsProps } from './products.model';
+import { ProductDetailsModel } from '@models/product.model';
 
-export default ({ data }: ProductDetailsProps) => {
+export default ({ data }: ProductDetailsModel) => {
   const { frontmatter, html } = data.markdownRemark;
 
   return (
