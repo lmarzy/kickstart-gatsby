@@ -20,7 +20,8 @@
 
   &--highlight {
     padding: spacer(4);
-    background-color: lighten(color(brown-light), 18);
+    background-color: lighten(color(brown-light), 15);
+    border: 1px dashed color(brown-light);
     border-radius: 20px;
   }
 

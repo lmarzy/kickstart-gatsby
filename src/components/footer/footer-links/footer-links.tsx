@@ -20,7 +20,7 @@ const links = [
     text: 'Delivery',
   },
   {
-    url: '/Contact',
+    url: '/contact',
     text: 'Contact Us',
   },
 ];

@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Button, Price, Icon } from '@components';
+import { Price, Icon, ButtonBuy } from '@components';
 
 import { SnipCartModel } from '@models/product.model';
 
@@ -48,7 +48,7 @@ export const ProductOverview: FunctionComponent<ProductOverviewProps> = ({
     <p className="c-product-overview__in-stock">{showStock(inStock)}</p>
     <p className="c-product-overview__short-desc">{shortDesc}</p>
 
-    <Button
+    <ButtonBuy
       type="primary"
       width="full"
       id={id}
@@ -60,7 +60,7 @@ export const ProductOverview: FunctionComponent<ProductOverviewProps> = ({
       image={image}
       snipcart={snipcart}>
       Add to basket
-    </Button>
+    </ButtonBuy>
 
     <p className="c-product-overview__personalisation">* Personalisaiton details can be added during checkout</p>
   </div>

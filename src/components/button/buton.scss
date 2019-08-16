@@ -9,9 +9,17 @@
   padding: spacer(2) spacer(4);
   border-radius: 6px;
 
+  &:focus {
+    outline-offset: 2px;
+  }
+
   &--primary {
     color: white;
     background-color: color(green);
+
+    &:focus {
+      outline: 1px dashed color(green);
+    }
   }
 
   &--full {

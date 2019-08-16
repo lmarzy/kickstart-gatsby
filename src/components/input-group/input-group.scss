@@ -1,0 +1,32 @@
+// ========================================================================
+// COMPONENTS/INPUT-GROUP
+// ========================================================================
+
+@import '~sassHelpers';
+
+.c-input-group {
+  margin-bottom: spacer(3);
+
+  &__label {
+    display: block;
+    margin-bottom: spacer(1);
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding-left: spacer(1);
+    padding-right: spacer(1);
+    border: 1px solid color(brown-light);
+    border-radius: 6px;
+
+    &:focus {
+      outline: 1px dashed color(brown-dark);
+      outline-offset: 2px;
+    }
+  }
+
+  &__input {
+    height: 42px;
+  }
+}
