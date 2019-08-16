@@ -15,8 +15,8 @@
   &__input,
   &__textarea {
     width: 100%;
-    padding-left: spacer(1);
-    padding-right: spacer(1);
+    padding-left: spacer(2);
+    padding-right: spacer(2);
     border: 1px solid color(brown-light);
     border-radius: 6px;
 
@@ -28,5 +28,9 @@
 
   &__input {
     height: 42px;
+  }
+
+  &__textarea {
+    padding: spacer(2);
   }
 }
