@@ -7,9 +7,9 @@ export const ContactForm = () => (
     <fieldset>
       <legend className="u-hidden-visually">Contact Form</legend>
 
-      <InputGroup type="text" id="name" name="name" label="Name:" />
-      <InputGroup type="email" id="email" name="email" label="Email:" />
-      <InputGroup type="textarea" id="message" name="message" label="Message:" />
+      <InputGroup type="text" id="names" name="name" label="Name:" />
+      {/* <InputGroup type="email" id="email" name="email" label="Email:" />
+      <InputGroup type="textarea" id="message" name="message" label="Message:" /> */}
 
       <Button type="submit" style="primary">
         Send away!
