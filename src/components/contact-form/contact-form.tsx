@@ -3,7 +3,7 @@ import { InputGroup } from '@components/input-group/input-group';
 import { Button } from '@components';
 
 export const ContactForm = () => (
-  <form name="contact" method="POST" data-netlify="true" className="c-contact-form">
+  <form name="contact" method="POST" data-netlify="true" action="/contact-success" className="c-contact-form">
     <fieldset>
       <legend className="u-hidden-visually">Contact Form</legend>
 
