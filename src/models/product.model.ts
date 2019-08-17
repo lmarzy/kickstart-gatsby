@@ -1,11 +1,13 @@
 export interface SpecsModel {
   material?: string;
-  width?: string;
+  width?: string[];
   height?: string;
+  thickness?: string;
   weight?: string;
 }
 
 export interface SnipCartModel {
+  sizes?: boolean;
   title?: boolean;
   name?: boolean;
   personalisation?: boolean;
@@ -22,7 +24,7 @@ export interface ProductDetailsModel {
         category: string;
         path: string;
         images: string[];
-        price: number;
+        prices: number[];
         inStock: boolean;
         shortDesc: string;
         specs: SpecsModel;

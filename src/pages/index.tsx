@@ -17,12 +17,12 @@ export default ({ data }: ProductsModel): JSX.Element => {
       </Section>
       <Section heading="Products, made just for you!" highlight>
         <p className="u-mb-2">
-          Beespoked is a family run small business from the heart of the UK. Run from a small home office creating
-          personalised whiteboards, notepads, signs and gifts.
+          Beespoked is a family run small business from the heart of the UK. Run from a small home office creating personalised whiteboards,
+          notepads, signs and gifts.
         </p>
         <p>
-          Our customes are at the heart of everything we do, creating products to suit every need and want from adding
-          simple personalisation to creating completely unique designs.
+          Our customes are at the heart of everything we do, creating products to suit every need and want from adding simple
+          personalisation to creating completely unique designs.
         </p>
       </Section>
     </MainLayout>
@@ -46,7 +46,7 @@ export const query = graphql`
                 }
               }
             }
-            price
+            prices
           }
           fields {
             slug

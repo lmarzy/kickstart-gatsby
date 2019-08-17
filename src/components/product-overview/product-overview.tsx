@@ -9,7 +9,7 @@ interface ProductOverviewProps {
   id: number;
   title: string;
   category: string;
-  price: number;
+  prices: number[];
   image: string;
   path: string;
   inStock: boolean;
@@ -35,7 +35,7 @@ export const ProductOverview: FunctionComponent<ProductOverviewProps> = ({
   id,
   title,
   category,
-  price,
+  prices,
   image,
   path,
   inStock,
@@ -44,7 +44,7 @@ export const ProductOverview: FunctionComponent<ProductOverviewProps> = ({
 }) => (
   <div className="c-product-overview">
     <h2 className="c-product-overview__title">{title}</h2>
-    <Price price={price} size="l" />
+    <Price price={prices[0]} size="l" />
     <p className="c-product-overview__in-stock">{showStock(inStock)}</p>
     <p className="c-product-overview__short-desc">{shortDesc}</p>
 
@@ -54,7 +54,7 @@ export const ProductOverview: FunctionComponent<ProductOverviewProps> = ({
       id={id}
       title={title}
       category={category}
-      price={price}
+      prices={prices}
       path={path}
       shortDesc={shortDesc}
       image={image}

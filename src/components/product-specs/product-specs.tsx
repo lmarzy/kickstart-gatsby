@@ -18,13 +18,23 @@ export const ProductSpecs: FunctionComponent<ProductSpecsProps> = ({ specs }) =>
     {specs.width && (
       <>
         <dt>Width:</dt>
-        <dd>{specs.width}</dd>
+        <dd>
+          {specs.width.map((spec: string) => (
+            <span key={spec}>{spec}</span>
+          ))}
+        </dd>
       </>
     )}
     {specs.height && (
       <>
         <dt>Height:</dt>
         <dd>{specs.height}</dd>
+      </>
+    )}
+    {specs.thickness && (
+      <>
+        <dt>Thickness:</dt>
+        <dd>{specs.thickness}</dd>
       </>
     )}
     {specs.weight && (

@@ -35,7 +35,7 @@ export const query = graphql`
                 }
               }
             }
-            price
+            prices
           }
           fields {
             slug

@@ -8,8 +8,7 @@ import { ProductsModel, ProductModel } from '@models/product-list.model';
 export default ({ data }: ProductsModel): JSX.Element => {
   const { edges } = data.allMarkdownRemark;
   const whiteboards = edges.filter(
-    (item: ProductModel) =>
-      item.node.frontmatter.category === 'whiteboards' && item.node.frontmatter.subCategory === 'meal-planners',
+    (item: ProductModel) => item.node.frontmatter.category === 'whiteboards' && item.node.frontmatter.subCategory === 'meal-planners',
   );
 
   return (
@@ -38,7 +37,7 @@ export const query = graphql`
                 }
               }
             }
-            price
+            prices
           }
           fields {
             slug

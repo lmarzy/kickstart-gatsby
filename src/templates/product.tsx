@@ -21,7 +21,7 @@ export default ({ data }: ProductDetailsModel) => {
             id={frontmatter.id}
             title={frontmatter.title}
             category={frontmatter.category}
-            price={frontmatter.price}
+            prices={frontmatter.prices}
             image={frontmatter.images[0]}
             path={frontmatter.path}
             inStock={frontmatter.inStock}
@@ -49,7 +49,7 @@ export const query = graphql`
         category
         title
         path
-        price
+        prices
         images
         inStock
         shortDesc
@@ -57,9 +57,11 @@ export const query = graphql`
           material
           width
           height
+          thickness
           weight
         }
         snipcart {
+          sizes
           title
           name
           personalisation
