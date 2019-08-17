@@ -49,7 +49,7 @@ export const ProductOverview: FunctionComponent<ProductOverviewProps> = ({
     <p className="c-product-overview__short-desc">{shortDesc}</p>
 
     <ButtonBuy
-      type="primary"
+      style="primary"
       width="full"
       id={id}
       title={title}

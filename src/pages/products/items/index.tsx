@@ -9,8 +9,6 @@ export default ({ data }: ProductsModel): JSX.Element => {
   const { edges } = data.allMarkdownRemark;
   const items = edges.filter((item: ProductModel) => item.node.frontmatter.category === 'items');
 
-  console.log(items);
-
   return (
     <MainLayout pageTitle="Items">
       <Section heading="Items">

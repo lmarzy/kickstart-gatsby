@@ -9,8 +9,6 @@ export default ({ data }: ProductsModel): JSX.Element => {
   const { edges } = data.allMarkdownRemark;
   const items = edges.filter((item: ProductModel) => item.node.frontmatter.subCategory === 'backToSchool');
 
-  console.log(items);
-
   return (
     <MainLayout pageTitle="Back to School">
       <Section heading="Back to School">
