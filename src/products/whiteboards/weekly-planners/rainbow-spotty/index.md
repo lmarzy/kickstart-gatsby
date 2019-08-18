@@ -1,5 +1,5 @@
 ---
-id: 'wbwp001'
+id: 'wbwporainbowspotty'
 title: 'Weekly Planner Whiteboard - Rainbow Spotty'
 category: 'whiteboards'
 subCategory: 'weekly-planners'

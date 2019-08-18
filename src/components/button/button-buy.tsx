@@ -15,25 +15,13 @@ interface ButtonProps {
   snipcart: SnipCartModel;
 }
 
-export const ButtonBuy: FunctionComponent<ButtonProps> = ({
-  id,
-  style,
-  width,
-  prices,
-  image,
-  title,
-  path,
-  children,
-  snipcart,
-}) => {
+export const ButtonBuy: FunctionComponent<ButtonProps> = ({ id, style, width, prices, image, title, path, children, snipcart }) => {
   let buttonStyles = `c-button c-button--${style} snipcart-add-item buyBtn`;
   const img = require(`../../products/${path}/images/${image}.jpg`);
 
   if (width) {
     buttonStyles += ` c-button--${width}`;
   }
-
-  console.log(snipcart);
 
   const buttonAttributes = {
     'data-item-id': id,
@@ -44,10 +32,16 @@ export const ButtonBuy: FunctionComponent<ButtonProps> = ({
   } as { [key: string]: string | number };
 
   if (snipcart.sizes) {
-    const priceDifference = prices[1] - prices[0];
-
     buttonAttributes['data-item-custom1-name'] = 'Size';
-    buttonAttributes['data-item-custom1-options'] = `${snipcart.sizes} + £${priceDifference}[+${priceDifference}]`;
+
+    let options = snipcart.sizes;
+
+    if (prices.length > 1) {
+      const priceDifference = prices[1] - prices[0];
+      options += ` + £${priceDifference.toFixed(2)}[+${priceDifference.toFixed(2)}]`;
+    }
+
+    buttonAttributes['data-item-custom1-options'] = options;
   }
 
   if (snipcart.title) {
