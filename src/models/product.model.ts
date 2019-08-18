@@ -1,18 +1,18 @@
 export interface SpecsModel {
   material?: string;
   width?: string[];
-  height?: string;
+  height?: string[];
   thickness?: string;
-  weight?: string;
+  weight?: string[];
 }
 
 export interface SnipCartModel {
-  sizes?: boolean;
+  sizes?: string;
   title?: boolean;
   name?: boolean;
   personalisation?: boolean;
   columns?: boolean;
-  addons?: boolean;
+  addons?: string;
 }
 
 export interface ProductDetailsModel {
@@ -26,7 +26,7 @@ export interface ProductDetailsModel {
         images: string[];
         prices: number[];
         inStock: boolean;
-        shortDesc: string;
+        shortDesc: string[];
         specs: SpecsModel;
         snipcart: SnipCartModel;
       };

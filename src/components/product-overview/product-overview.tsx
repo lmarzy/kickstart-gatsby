@@ -13,7 +13,7 @@ interface ProductOverviewProps {
   image: string;
   path: string;
   inStock: boolean;
-  shortDesc: string;
+  shortDesc: string[];
   snipcart: SnipCartModel;
 }
 
@@ -44,24 +44,35 @@ export const ProductOverview: FunctionComponent<ProductOverviewProps> = ({
 }) => (
   <div className="c-product-overview">
     <h2 className="c-product-overview__title">{title}</h2>
-    <Price price={prices[0]} size="l" />
+    <Price prices={prices} size="l" />
     <p className="c-product-overview__in-stock">{showStock(inStock)}</p>
-    <p className="c-product-overview__short-desc">{shortDesc}</p>
+    {shortDesc.map((item: string, i: number) => {
+      let styles = 'c-product-overview__short-desc';
+      const last = shortDesc.length - 1;
+
+      if (i === last) {
+        styles += ` last`;
+      }
+
+      return (
+        <p key={`desc-${i}`} className={styles}>
+          {item}
+        </p>
+      );
+    })}
 
     <ButtonBuy
       style="primary"
       width="full"
       id={id}
       title={title}
-      category={category}
       prices={prices}
       path={path}
-      shortDesc={shortDesc}
       image={image}
       snipcart={snipcart}>
       Add to basket
     </ButtonBuy>
 
-    <p className="c-product-overview__personalisation">* Personalisaiton details can be added during checkout</p>
+    <p className="c-product-overview__personalisation">* Personalisaiton details added during checkout.</p>
   </div>
 );

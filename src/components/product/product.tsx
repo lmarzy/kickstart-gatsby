@@ -9,7 +9,7 @@ interface ProductProps {
   url: string;
   title: string;
   image: any;
-  price: number;
+  price: number[];
 }
 
 export const Product: FunctionComponent<ProductProps> = ({ url, title, image, price }) => (
@@ -17,7 +17,7 @@ export const Product: FunctionComponent<ProductProps> = ({ url, title, image, pr
     <Link to={url} className="c-product">
       <Img fluid={image} alt={title} className="c-product__img" />
       <h3 className="c-product__heading">{title}</h3>
-      <Price price={price} />
+      <Price prices={price} />
     </Link>
   </article>
 );

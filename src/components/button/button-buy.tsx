@@ -11,8 +11,6 @@ interface ButtonProps {
   prices: number[];
   image: string;
   title: string;
-  category: string;
-  shortDesc: string;
   path: string;
   snipcart: SnipCartModel;
 }
@@ -24,8 +22,6 @@ export const ButtonBuy: FunctionComponent<ButtonProps> = ({
   prices,
   image,
   title,
-  category,
-  shortDesc,
   path,
   children,
   snipcart,
@@ -37,12 +33,13 @@ export const ButtonBuy: FunctionComponent<ButtonProps> = ({
     buttonStyles += ` c-button--${width}`;
   }
 
+  console.log(snipcart);
+
   const buttonAttributes = {
     'data-item-id': id,
     'data-item-price': prices[0],
     'data-item-image': img,
     'data-item-name': title,
-    'data-item-description': shortDesc,
     'data-item-url': `http://beespoked.co.uk/products/${path}`,
   } as { [key: string]: string | number };
 
@@ -50,7 +47,7 @@ export const ButtonBuy: FunctionComponent<ButtonProps> = ({
     const priceDifference = prices[1] - prices[0];
 
     buttonAttributes['data-item-custom1-name'] = 'Size';
-    buttonAttributes['data-item-custom1-options'] = `A4 | A3 + £${priceDifference}[+${priceDifference}]`;
+    buttonAttributes['data-item-custom1-options'] = `${snipcart.sizes} + £${priceDifference}[+${priceDifference}]`;
   }
 
   if (snipcart.title) {
@@ -75,9 +72,7 @@ export const ButtonBuy: FunctionComponent<ButtonProps> = ({
 
   if (snipcart.addons) {
     buttonAttributes['data-item-custom6-name'] = 'Add-ons';
-    buttonAttributes['data-item-custom6-options'] = `${
-      category === 'whiteboards' ? 'Whiteboard Only' : 'Notepad Only'
-    }|Magnets + £2.00[+2.00]|Command Strips + £2.00[+2.00]`;
+    buttonAttributes['data-item-custom6-options'] = snipcart.addons;
   }
 
   return (

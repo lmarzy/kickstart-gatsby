@@ -17,7 +17,7 @@ export const ProductList: FunctionComponent<ProductListProps> = ({ products }) =
           url={product.node.fields.slug}
           title={product.node.frontmatter.title}
           image={product.node.frontmatter.mainImage.childImageSharp.fluid}
-          price={product.node.frontmatter.price}
+          price={product.node.frontmatter.prices}
         />
       </li>
     ))}
