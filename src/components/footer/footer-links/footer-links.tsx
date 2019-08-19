@@ -8,15 +8,15 @@ const links = [
     text: 'About Us',
   },
   {
-    url: '/terms',
+    url: '/policies/terms',
     text: 'Terms & Conditions',
   },
   {
-    url: '/privacy',
+    url: '/policies/privacy',
     text: 'Privacy Policy',
   },
   {
-    url: '/delivery',
+    url: '/policies/delivery',
     text: 'Delivery',
   },
   {

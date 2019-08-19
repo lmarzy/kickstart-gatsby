@@ -1,9 +1,8 @@
 // ========================================================================
-// 05-UTILITIES/IMPORTS
+// UTILITIES/BULLETS
 // ========================================================================
 
-@import 'font-sizes';
-@import 'spacers';
-@import 'colours';
-@import 'visibility';
-@import 'bullets';
+.u-bullets {
+  margin-left: spacer(4);
+  list-style-type: disc;
+}
