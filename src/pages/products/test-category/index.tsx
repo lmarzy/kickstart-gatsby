@@ -1,19 +1,17 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { MainLayout, Section, CategoryList } from '@components';
+import { MainLayout } from '@components';
 
-import { ProductsModel, ProductModel } from '@models/product-list.model';
+import { ProductsModel, ProductModel } from '@shared/models/product-list.model';
 
 export default ({ data }: ProductsModel): JSX.Element => {
   const { edges } = data.allMarkdownRemark;
-  const notepads = edges.filter((item: ProductModel) => item.node.frontmatter.category === 'notepads');
+  const category = edges.filter((item: ProductModel) => item.node.frontmatter.category === 'test-category');
 
   return (
-    <MainLayout pageTitle="Notepads">
-      <Section heading="Notepads">
-        <CategoryList categories={notepads} />
-      </Section>
+    <MainLayout pageTitle="Whiteboards">
+      <h2>{category[0].node.frontmatter.title}</h2>
     </MainLayout>
   );
 };
@@ -27,7 +25,6 @@ export const query = graphql`
           frontmatter {
             title
             category
-            subCategory
             mainImage {
               childImageSharp {
                 fluid(maxWidth: 600) {
@@ -35,7 +32,7 @@ export const query = graphql`
                 }
               }
             }
-            prices
+            price
           }
           fields {
             slug

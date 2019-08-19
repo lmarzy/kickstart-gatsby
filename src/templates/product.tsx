@@ -3,40 +3,15 @@ import { graphql } from 'gatsby';
 
 import './product.scss';
 
-import { MainLayout, ImageGallery, ProductOverview, ProductDetails, ProductSpecs } from '@components';
-
 import { ProductDetailsModel } from '@models/product.model';
 
 export default ({ data }: ProductDetailsModel) => {
   const { frontmatter, html } = data.markdownRemark;
 
   return (
-    <MainLayout pageTitle={frontmatter.title}>
-      <article className="l-product-details u-mb-4">
-        <div className="l-product-details__gallery">
-          <ImageGallery images={frontmatter.images} path={frontmatter.path} />
-        </div>
-        <div className="l-product-details__text">
-          <ProductOverview
-            id={frontmatter.id}
-            title={frontmatter.title}
-            category={frontmatter.category}
-            prices={frontmatter.prices}
-            image={frontmatter.images[0]}
-            path={frontmatter.path}
-            inStock={frontmatter.inStock}
-            shortDesc={frontmatter.shortDesc}
-            snipcart={frontmatter.snipcart}
-          />
-        </div>
-        <div className="l-product-details__description">
-          <ProductDetails html={html} />
-        </div>
-        <div className="l-product-details__specs">
-          <ProductSpecs specs={frontmatter.specs} />
-        </div>
-      </article>
-    </MainLayout>
+    <div>
+      <h1>Product Page</h1>
+    </div>
   );
 };
 
@@ -46,28 +21,13 @@ export const query = graphql`
       html
       frontmatter {
         id
-        category
         title
+        category
         path
-        prices
+        price
         images
         inStock
         shortDesc
-        specs {
-          material
-          width
-          height
-          thickness
-          weight
-        }
-        snipcart {
-          sizes
-          title
-          name
-          personalisation
-          columns
-          addons
-        }
       }
     }
   }

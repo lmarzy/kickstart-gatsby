@@ -13,7 +13,7 @@ export interface ProductModel {
       subCategory: string;
       latest: boolean;
       mainImage: ImageSharp;
-      prices: number[];
+      price: number;
     };
     fields: {
       slug: string;

@@ -11,7 +11,11 @@ const PostCssPxToRem = require('postcss-pxtorem');
 
 module.exports = {
   siteMetadata: {
-    title: 'Beespoked',
+    title: 'KickstartGatsby',
+    address: 'Kickstart-address-update',
+    webAddress: 'Kickstart-webAddress-update',
+    email: 'Kickstart-email-update',
+    phone: 'Kickstart-phone-update',
   },
   plugins: [
     {

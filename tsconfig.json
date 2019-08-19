@@ -19,7 +19,7 @@
       "@components": ["components/index"],
       "@components/*": ["components/*"],
       "@assets/*": ["assets/*"],
-      "@models/*": ["models/*"]
+      "@shared/*": ["shared/*"]
     },
     "forceConsistentCasingInFileNames": true
   },

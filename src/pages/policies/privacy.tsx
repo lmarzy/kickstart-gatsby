@@ -1,17 +1,46 @@
 import React from 'react';
 
-import { MainLayout, Section } from '@components';
+import { MainLayout } from '@components';
+import { graphql, useStaticQuery } from 'gatsby';
 
-import siteData from '../../data/site-data.json';
+export const SITE_DATA_QUERY = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        webAddress
+        address
+        email
+        phone
+      }
+    }
+  }
+`;
 
-export default () => (
-  <MainLayout pageTitle="Privacy Policy">
-    <Section heading="Privacy Policy">
+export interface SiteDataModel {
+  site: {
+    siteMetadata: {
+      title: string;
+      webAddress: string;
+      address: string;
+      email: string;
+      phone: string;
+    };
+  };
+}
+
+export default () => {
+  const data = useStaticQuery<SiteDataModel>(SITE_DATA_QUERY);
+
+  const { title, webAddress, address, email, phone } = data.site.siteMetadata;
+
+  return (
+    <MainLayout pageTitle="Privacy Policy">
       <h2 className="u-mb-3">GDPR Compliant Privacy Statement</h2>
       <h3 className="u-mb-2">1. Who we are</h3>
-      <p className="u-mb-3">When we refer to “we”, “us” and “our” in this notice it means {siteData.name}.</p>
+      <p className="u-mb-3">When we refer to “we”, “us” and “our” in this notice it means {title}.</p>
       <p className="u-mb-3">
-        When we say, “individuals” in this notice, we mean anyone whose personal information we may collect, including:{' '}
+        When we say, “individuals” in this notice, we mean anyone whose personal information we may collect, including:
       </p>
       <ul className="u-bullets u-mb-3">
         <li>any customer placing an order.</li>
@@ -54,7 +83,7 @@ export default () => (
       <p className="u-mb-3">From other persons or organisations, for example:</p>
       <ul className="u-bullets u-mb-3">
         <li>Etsy where a customer has placed an order</li>
-        <li>{siteData.webAddress} where a customer has placed an order.</li>
+        <li>{webAddress} where a customer has placed an order.</li>
         <li>Facebook where an order or quotation has taken place</li>
         <li>Instagram where an order or quotation has taken place</li>
       </ul>
@@ -92,12 +121,12 @@ export default () => (
       </ul>
       <p className="u-mb-3">If you wish to exercise any of these rights please contact us at:</p>
       <p className="u-mb-3">
-        {siteData.name}, {siteData.address}
+        {title}, {address}
       </p>
       <dl className="u-mb-3">
         <dt>Email:</dt>
         <dd>
-          {siteData.email} Phone: {siteData.phone} (answer phone - the quickest way to contact us by email for a more immediate response).
+          {email} Phone: {phone} (answer phone - the quickest way to contact us by email for a more immediate response).
         </dd>
       </dl>
 
@@ -115,6 +144,6 @@ export default () => (
         cookies to help us improve users experience on this website and also for the site to determine what device you are viewing the site
         on in order for the correct most appropriate version to be shown.
       </p>
-    </Section>
-  </MainLayout>
-);
+    </MainLayout>
+  );
+};
