@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-// @ts-ignore
 import { Helmet } from 'react-helmet';
 
 import { Header, Footer } from '../';

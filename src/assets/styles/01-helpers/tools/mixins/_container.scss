@@ -1,0 +1,14 @@
+// ========================================================================
+// TOOLS/MIXINS/CONTAINER
+// ========================================================================
+
+// Usage
+// @include container;
+
+@mixin container {
+  max-width: $max-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: spacer(2);
+  padding-left: spacer(2);
+}

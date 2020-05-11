@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MainLayout } from '@components';
+import { MainLayout } from '@layouts/index';
 import { graphql, useStaticQuery } from 'gatsby';
 
 export const SITE_DATA_QUERY = graphql`

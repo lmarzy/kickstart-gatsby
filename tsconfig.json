@@ -16,10 +16,9 @@
     "rootDir": "./src",
     "baseUrl": "./src",
     "paths": {
-      "@components": ["components/index"],
-      "@components/*": ["components/*"],
+      "@layouts/*": ["components/layouts/*"],
       "@assets/*": ["assets/*"],
-      "@shared/*": ["shared/*"]
+      "@models/*": ["shared/models/*"]
     },
     "forceConsistentCasingInFileNames": true
   },

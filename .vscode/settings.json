@@ -3,10 +3,12 @@
   "javascript.format.enable": false,
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
-  "eslint.autoFixOnSave": true,
   "eslint.alwaysShowStatus": true,
   "prettier.disableLanguages": ["js"],
   "stylelint.enable": true,
   "css.validate": false,
-  "scss.validate": false
+  "scss.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }

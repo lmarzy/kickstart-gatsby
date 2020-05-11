@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MainLayout } from '@components';
+import { MainLayout } from '@layouts/index';
 
 export default () => (
   <MainLayout pageTitle="Delivery">
