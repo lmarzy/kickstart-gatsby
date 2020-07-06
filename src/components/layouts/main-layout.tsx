@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
-import { Header, Footer } from '../';
+import { Header, Footer } from '@sections/index';
 
 import '@assets/styles/app.scss';
 

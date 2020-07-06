@@ -29,7 +29,7 @@ export interface SiteDataModel {
   };
 }
 
-export default () => {
+export default (): JSX.Element => {
   const data = useStaticQuery<SiteDataModel>(SITE_DATA_QUERY);
 
   const { title, webAddress, address, email, phone } = data.site.siteMetadata;

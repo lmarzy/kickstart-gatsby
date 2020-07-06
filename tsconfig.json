@@ -17,6 +17,8 @@
     "baseUrl": "./src",
     "paths": {
       "@layouts/*": ["components/layouts/*"],
+      "@sections/*": ["components/sections/*"],
+      "@shared/*": ["components/shared/*"],
       "@assets/*": ["assets/*"],
       "@models/*": ["shared/models/*"]
     },

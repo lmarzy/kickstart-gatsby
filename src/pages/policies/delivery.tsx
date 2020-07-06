@@ -2,7 +2,7 @@ import React from 'react';
 
 import { MainLayout } from '@layouts/index';
 
-export default () => (
+export default (): JSX.Element => (
   <MainLayout pageTitle="Delivery">
     <p className="u-mb-3">We currently send all of our items 2nd class with Royal Mail.</p>
 

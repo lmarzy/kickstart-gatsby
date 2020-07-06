@@ -36,7 +36,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
     'gatsby-plugin-typescript',
-    'gatsby-plugin-tslint',
     'gatsby-plugin-react-helmet',
   ],
 };

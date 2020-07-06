@@ -2,7 +2,7 @@ import React from 'react';
 
 import { MainLayout } from '@layouts/index';
 
-export default () => (
+export default (): JSX.Element => (
   <MainLayout pageTitle="About Us">
     <p className="u-mb-4">
       We are a family run business based in Nottinghamshire. Our team is made up of a web designer, a crafter an opinionated teenager and

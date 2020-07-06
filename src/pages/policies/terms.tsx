@@ -2,7 +2,7 @@ import React from 'react';
 
 import { MainLayout } from '@layouts/index';
 
-export default () => (
+export default (): JSX.Element => (
   <MainLayout pageTitle="About Us">
     <ol className="u-mb-3">
       <li>
