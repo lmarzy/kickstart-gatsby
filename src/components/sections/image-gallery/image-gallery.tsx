@@ -1,33 +1,35 @@
 import React, { FunctionComponent, useState } from 'react';
+import Img from 'gatsby-image';
 
 import './image-gallery.scss';
 
+import { ImageSharp } from 'models/product-list.model';
+
 interface ImageGalleryProps {
-  path: string;
-  images: string[];
+  images: ImageSharp[];
 }
 
-export const ImageGallery: FunctionComponent<ImageGalleryProps> = ({ path, images }) => {
-  const allImages = images.map((img: string) => require(`../../products/${path}/images/${img}.jpg`));
+export const ImageGallery: FunctionComponent<ImageGalleryProps> = ({ images }) => {
+  console.log('IMAGES', images[0].childImageSharp);
 
-  const [currentImage, setCurrentImage] = useState(allImages[0]);
+  const [currentImage, setCurrentImage] = useState(images[0].childImageSharp.fluid);
 
   const handleImageChange = (e: any) => {
     e.preventDefault();
-    setCurrentImage(allImages[e.target.attributes['data-image'].value]);
+    setCurrentImage(images[e.target.attributes['data-image'].value].childImageSharp.fluid);
   };
 
   return (
     <div className="c-image-gallery">
       <div className="c-image-gallery__image-wrap">
-        <img src={currentImage} alt="product-image" className="c-image-gallery__img" />
+        <Img fluid={currentImage} alt="product-image" className="c-image-gallery__img" />
       </div>
       <ul className="c-image-gallery__thumbs">
-        {allImages.map((img: string, index: number) => {
+        {images.map((img: any, index: number) => {
           return (
             <li key={`image-${index}`} className="c-image-gallery__thumb">
               <button type="button" data-image={index} onClick={handleImageChange}>
-                <img src={img} alt={`image-${index}`} />
+                <img src={img.childImageSharp.fluid.src} alt={`image-${index}`} />
               </button>
             </li>
           );

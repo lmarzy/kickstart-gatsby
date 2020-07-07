@@ -4,16 +4,12 @@ title: 'Test Product'
 category: 'test-category'
 path: 'test-category/test-product'
 mainImage: './images/1.jpg'
-images: ['1', '2', '3', '4', '5', '6', '7']
+images: ['./images/1.jpg', './images/2.jpg', './images/3.jpg', './images/4.jpg']
 price: 10.00
 inStock: true
 latest: true
-shortDesc: [
-  'one',
-  'two'
-]
-snipcart: {
-}
+shortDesc: ['one', 'two']
+snipcart: {}
 ---
 
 Test Product...

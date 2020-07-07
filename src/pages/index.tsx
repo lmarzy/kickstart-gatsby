@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { ProductsModel, ProductModel } from '@models/product-list.model';
+import { ProductsModel, ProductModel } from 'models/product-list.model';
 
 import { MainLayout } from '@layouts/index';
 

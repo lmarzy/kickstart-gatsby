@@ -1,3 +1,5 @@
+import { ImageSharp } from './product-list.model';
+
 export interface SpecsModel {
   material?: string;
   width?: string[];
@@ -23,7 +25,7 @@ export interface ProductDetailsModel {
         title: string;
         category: string;
         path: string;
-        images: string[];
+        images: ImageSharp[];
         prices: number[];
         inStock: boolean;
         shortDesc: string[];
